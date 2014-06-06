@@ -109,6 +109,10 @@ set nohidden
 
 " Set off the other paren
 highlight MatchParen ctermbg=4
+
+" Set 256 color scheme
+set t_Co=256
+
 " }}}
 
 "{{{ Mappings
