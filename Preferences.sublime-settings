@@ -7,6 +7,7 @@
 	"font_size": 13,
 	"detect_slow_plugins": false,
 	"draw_white_space": "selection",
+        "draw_centered": true,
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
@@ -50,6 +51,7 @@
 	[
 		80
 	],
+        "show_minimap": false,
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
