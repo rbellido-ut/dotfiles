@@ -14,6 +14,13 @@ let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 " }}}}
 
+" {{{{ Git-gutter Vim
+let g:gitgutter_realtime=1
+let g:gitgutter_eager=1
+" }}}}
+
+set updatetime=750
+
 " }}}
 
 "{{{Auto Commands
