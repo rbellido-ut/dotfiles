@@ -1,3 +1,21 @@
+"{{{ plugins related
+
+" Dat pathogen tho!
+execute pathogen#infect()
+
+" Toggle that tagbar!
+nmap <F8> :TagbarToggle<CR>
+
+" Toggle that NERDTree
+nmap <silent> <C-k>b :NERDTree<CR>
+
+" {{{{ Syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+" }}}}
+
+" }}}
+
 "{{{Auto Commands
 
 " Automatically cd into the directory that the file is in
@@ -113,12 +131,19 @@ highlight MatchParen ctermbg=4
 " Set 256 color scheme
 set t_Co=256
 
+" FOr teh clipboard goodness
+set clipboard=unnamed
+
+" No backups!
+set nobackup
+set noswapfile
+
 " }}}
 
 "{{{ Mappings
 " Swap ; and : convenient.
 nnoremap ; :
-nnoremap : ;
+" nnoremap : ;
 
 filetype plugin indent on
 syntax on
@@ -131,15 +156,23 @@ set directory=~/.vim/tmp
 
 " Favorite Color Scheme
 if has("gui_running")
-   colorscheme inkpot
+   colorscheme ron
    " Remove Toolbar
    set guioptions-=T
    "Terminus is AWESOME
    set guifont=Terminus\ 9
 else
-    colorscheme ron
+    colorscheme railscasts
 endif
 
 "Status line gnarliness
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+
+" Show whitespace characters (but remove them afterwards)
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" Toggle F2 to get rid of that stupid auto indent when pasting
+set pastetoggle=<F2>
+" }}}
