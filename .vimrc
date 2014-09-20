@@ -1,7 +1,9 @@
 "{{{ plugins related
 
 " Dat pathogen tho!
-execute pathogen#infect()
+"execute pathogen#infect()
+call pathogen#infect()
+call pathogen#helptags()
 
 " Toggle that tagbar!
 nmap <F8> :TagbarToggle<CR>
@@ -175,10 +177,22 @@ endif
 "Status line gnarliness
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+set statusline+=[%{FileSize()}]
+function! FileSize()
+    let bytes = getfsize(expand("%:p"))
+    if bytes <= 0
+        return ""
+    endif
+    if bytes < 1024
+        return bytes
+    else
+        return (bytes / 1024) . "K"
+    endif
+endfunction
 
 " Show whitespace characters (but remove them afterwards)
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+" set list
+" set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " Toggle F2 to get rid of that stupid auto indent when pasting
 set pastetoggle=<F2>
