@@ -85,4 +85,12 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/.composer/vendor/bin" # Add RVM to PATH for scripting
+
+
+function addVimPlugin() {
+    cd ~/.vim
+    git submodule add $1 bundle/$2
+    git submodule init && git submodule update
+    cd -
+}
