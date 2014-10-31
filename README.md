@@ -1,1 +1,1 @@
-This is a colletion of my config files for my dev environment
+This is a collection of my config files for my dev environment
